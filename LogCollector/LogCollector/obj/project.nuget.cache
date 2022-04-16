@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "dgSpecHash": "yTgzmF74WqYAc03umx/JHNJC1L5iGngHcAAcIEURUZez6JbpwQ0SC/ErsJ5SO1HrU1BSx3j1Th0Ur4T93xAW3Q==",
+  "success": true,
+  "projectFilePath": "/Users/bf061n/codebase/cribl-log-collector/LogCollector/LogCollector/LogCollector.csproj",
+  "expectedPackageFiles": [
+    "/Users/bf061n/.nuget/packages/microsoft.extensions.apidescription.server/3.0.0/microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
+    "/Users/bf061n/.nuget/packages/microsoft.openapi/1.2.3/microsoft.openapi.1.2.3.nupkg.sha512",
+    "/Users/bf061n/.nuget/packages/swashbuckle.aspnetcore/6.2.3/swashbuckle.aspnetcore.6.2.3.nupkg.sha512",
+    "/Users/bf061n/.nuget/packages/swashbuckle.aspnetcore.swagger/6.2.3/swashbuckle.aspnetcore.swagger.6.2.3.nupkg.sha512",
+    "/Users/bf061n/.nuget/packages/swashbuckle.aspnetcore.swaggergen/6.2.3/swashbuckle.aspnetcore.swaggergen.6.2.3.nupkg.sha512",
+    "/Users/bf061n/.nuget/packages/swashbuckle.aspnetcore.swaggerui/6.2.3/swashbuckle.aspnetcore.swaggerui.6.2.3.nupkg.sha512"
+  ],
+  "logs": []
+}
