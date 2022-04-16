@@ -1,0 +1,12 @@
+version: "3.9"
+services:
+  LogCollector:
+    ports:
+      - "8080:80"
+    image: cribl/logcollector
+    build:
+      dockerfile: "./LogCollector/LogCollector.dockerfile"
+      context: .
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+    
