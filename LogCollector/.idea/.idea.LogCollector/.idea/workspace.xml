@@ -5,10 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d8d6fc87-2311-47cf-8310-b8bb629eeed8" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/LogCollector/LogCollector.dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docker-compose.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.LogCollector/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.LogCollector/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LogCollector/LogCollector.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/LogCollector/LogCollector.csproj" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/LogCollector.UnitTests/LogCollector.UnitTests.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LogCollector.sln" beforeDir="false" afterPath="$PROJECT_DIR$/LogCollector.sln" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,6 +16,9 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/LogCollector.UnitTests/UnitTest1.cs" root0="FORCE_HIGHLIGHTING" />
+  </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
       <option value="$PROJECT_DIR$/LogCollector/Controllers/WeatherForecastController.cs" />
@@ -26,6 +27,9 @@
       <option value="$PROJECT_DIR$/.gitignore" />
       <option value="$PROJECT_DIR$/LogCollector/LogCollector.dockerfile" />
       <option value="$PROJECT_DIR$/docker-compose.yaml" />
+      <option value="$PROJECT_DIR$/LogCollectorTests/Controllers/WeatherForecastControllerTests.cs" />
+      <option value="$PROJECT_DIR$/LogCollector.UnitTests/UnitTest1.cs" />
+      <option value="$PROJECT_DIR$/LogCollector.UnitTests/Controllers/WeatherForecastControllerTests.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="27t73tKzBAWAngEUJbhy43Kd8ap" />
@@ -98,7 +102,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1650127332421</updated>
-      <workItem from="1650127339574" duration="1028000" />
+      <workItem from="1650127339574" duration="1348000" />
     </task>
     <servers />
   </component>
