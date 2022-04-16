@@ -5,44 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d8d6fc87-2311-47cf-8310-b8bb629eeed8" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/LogCollector/bin/Debug/net6.0/LogCollector" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/LogCollector/bin/Debug/net6.0/LogCollector.deps.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/LogCollector/bin/Debug/net6.0/LogCollector.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/LogCollector/bin/Debug/net6.0/LogCollector.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/LogCollector/bin/Debug/net6.0/LogCollector.runtimeconfig.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/LogCollector/bin/Debug/net6.0/Microsoft.OpenApi.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/LogCollector/bin/Debug/net6.0/Swashbuckle.AspNetCore.Swagger.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/LogCollector/bin/Debug/net6.0/Swashbuckle.AspNetCore.SwaggerGen.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/LogCollector/bin/Debug/net6.0/Swashbuckle.AspNetCore.SwaggerUI.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/LogCollector/bin/Debug/net6.0/appsettings.Development.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/LogCollector/bin/Debug/net6.0/appsettings.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/LogCollector/bin/Debug/net6.0/ref/LogCollector.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/LogCollector/obj/Debug/net6.0/.NETCoreApp,Version=v6.0.AssemblyAttributes.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/LogCollector/obj/Debug/net6.0/LogCollector.AssemblyInfo.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/LogCollector/obj/Debug/net6.0/LogCollector.AssemblyInfoInputs.cache" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/LogCollector/obj/Debug/net6.0/LogCollector.GeneratedMSBuildEditorConfig.editorconfig" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/LogCollector/obj/Debug/net6.0/LogCollector.GlobalUsings.g.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/LogCollector/obj/Debug/net6.0/LogCollector.MvcApplicationPartsAssemblyInfo.cache" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/LogCollector/obj/Debug/net6.0/LogCollector.MvcApplicationPartsAssemblyInfo.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/LogCollector/obj/Debug/net6.0/LogCollector.assets.cache" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/LogCollector/obj/Debug/net6.0/LogCollector.csproj.AssemblyReference.cache" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/LogCollector/obj/Debug/net6.0/LogCollector.csproj.CopyComplete" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/LogCollector/obj/Debug/net6.0/LogCollector.csproj.CoreCompileInputs.cache" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/LogCollector/obj/Debug/net6.0/LogCollector.csproj.FileListAbsolute.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/LogCollector/obj/Debug/net6.0/LogCollector.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/LogCollector/obj/Debug/net6.0/LogCollector.genruntimeconfig.cache" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/LogCollector/obj/Debug/net6.0/LogCollector.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/LogCollector/obj/Debug/net6.0/apphost" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/LogCollector/obj/Debug/net6.0/ref/LogCollector.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/LogCollector/obj/Debug/net6.0/staticwebassets.build.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/LogCollector/obj/LogCollector.csproj.nuget.dgspec.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/LogCollector/obj/LogCollector.csproj.nuget.g.props" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/LogCollector/obj/LogCollector.csproj.nuget.g.targets" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/LogCollector/obj/project.assets.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/LogCollector/obj/project.nuget.cache" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/LogCollector/obj/project.packagespec.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/LogCollector/obj/rider.project.restore.info" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/LogCollector/obj/staticwebassets.pack.sentinel" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/LogCollector/Controllers/LogsController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.LogCollector/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.LogCollector/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,6 +30,8 @@
       <option value="$PROJECT_DIR$/LogCollectorTests/Controllers/WeatherForecastControllerTests.cs" />
       <option value="$PROJECT_DIR$/LogCollector.UnitTests/Controllers/WeatherForecastControllerTests.cs" />
       <option value="$PROJECT_DIR$/LogCollector.UnitTests/UnitTest1.cs" />
+      <option value="$PROJECT_DIR$/LogCollector/Controllers/LogController.cs" />
+      <option value="$PROJECT_DIR$/LogCollector/Controllers/LogsController.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="27t73tKzBAWAngEUJbhy43Kd8ap" />
