@@ -1,6 +1,5 @@
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Routing;
 using Microsoft.Extensions.Logging;
 
 namespace LogCollector.Controllers
@@ -18,9 +17,9 @@ namespace LogCollector.Controllers
         
         [HttpGet]
         [Route("filename/{filename}")]
-        public ActionResult GetLogs(string filename)
+        public async Task<ActionResult> GetLogs(string filename)
         {
-            return Ok(filename);
+            return await Task.FromResult(Ok(filename));
         }
 
     }

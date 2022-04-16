@@ -5,8 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d8d6fc87-2311-47cf-8310-b8bb629eeed8" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/LogCollector/Controllers/LogsController.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/LogCollector.UnitTests/Controllers/LogControllertests.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.LogCollector/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.LogCollector/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LogCollector.UnitTests/LogCollector.UnitTests.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/LogCollector.UnitTests/LogCollector.UnitTests.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LogCollector/Controllers/LogsController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/LogCollector/Controllers/LogsController.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,6 +20,8 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/LogCollector.UnitTests/UnitTest1.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/06FEAA24-EB4D-4490-A520-D3C4281C9864/1A2/ObjectResult.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/06FEAA24-EB4D-4490-A520-D3C4281C9864/1A3/OkObjectResult.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
@@ -32,6 +36,8 @@
       <option value="$PROJECT_DIR$/LogCollector.UnitTests/UnitTest1.cs" />
       <option value="$PROJECT_DIR$/LogCollector/Controllers/LogController.cs" />
       <option value="$PROJECT_DIR$/LogCollector/Controllers/LogsController.cs" />
+      <option value="$PROJECT_DIR$/LogCollector.UnitTests/LogCollector.UnitTests.csproj" />
+      <option value="$PROJECT_DIR$/LogCollector.UnitTests/Controllers/LogControllertests.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="27t73tKzBAWAngEUJbhy43Kd8ap" />
