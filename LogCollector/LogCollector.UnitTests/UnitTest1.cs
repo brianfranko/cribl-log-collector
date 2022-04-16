@@ -2,6 +2,7 @@ using NUnit.Framework;
 
 namespace LogCollector.UnitTests;
 
+[TestFixture]
 public class Tests
 {
     [SetUp]
