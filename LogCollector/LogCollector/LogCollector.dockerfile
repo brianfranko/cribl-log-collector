@@ -12,4 +12,10 @@ RUN dotnet publish -c Release -o out
 FROM mcr.microsoft.com/dotnet/aspnet:6.0
 WORKDIR /app
 COPY --from=build-env /app/out .
+
+EXPOSE 8080
+RUN chown -R 1001:80 ./
+RUN chmod -R 0500 ./
+RUN chmod -R 0700 *.dll 
+USER 1001
 ENTRYPOINT ["dotnet", "LogCollector.dll"]

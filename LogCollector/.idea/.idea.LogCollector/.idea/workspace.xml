@@ -5,7 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d8d6fc87-2311-47cf-8310-b8bb629eeed8" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/LogCollector/Configuration/LogCollectorConfiguration.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/LogCollector/logs/Authentication.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/LogCollector/logs/Connection.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/LogCollector/logs/Sample.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.LogCollector/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.LogCollector/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LogCollector/Controllers/LogsController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/LogCollector/Controllers/LogsController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LogCollector/LogCollector.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/LogCollector/LogCollector.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LogCollector/LogCollector.dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/LogCollector/LogCollector.dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,6 +27,10 @@
     <setting file="file://$PROJECT_DIR$/LogCollector.UnitTests/UnitTest1.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/06FEAA24-EB4D-4490-A520-D3C4281C9864/1A2/ObjectResult.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/06FEAA24-EB4D-4490-A520-D3C4281C9864/1A3/OkObjectResult.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/LogCollector/Program.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/263CE890-5218-437E-A6AD-28B0E0CA7AA8/1/SwaggerUIBuilderExtensions.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/LogCollector/Controllers/LogsController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/LogCollector/Controllers/WeatherForecastController.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
@@ -26,15 +38,20 @@
       <option value="$PROJECT_DIR$/LogCollector/WeatherForecast.cs" />
       <option value="$PROJECT_DIR$/LogCollector/Program.cs" />
       <option value="$PROJECT_DIR$/.gitignore" />
-      <option value="$PROJECT_DIR$/LogCollector/LogCollector.dockerfile" />
-      <option value="$PROJECT_DIR$/docker-compose.yaml" />
       <option value="$PROJECT_DIR$/LogCollectorTests/Controllers/WeatherForecastControllerTests.cs" />
       <option value="$PROJECT_DIR$/LogCollector.UnitTests/Controllers/WeatherForecastControllerTests.cs" />
       <option value="$PROJECT_DIR$/LogCollector.UnitTests/UnitTest1.cs" />
       <option value="$PROJECT_DIR$/LogCollector/Controllers/LogController.cs" />
-      <option value="$PROJECT_DIR$/LogCollector/Controllers/LogsController.cs" />
       <option value="$PROJECT_DIR$/LogCollector.UnitTests/LogCollector.UnitTests.csproj" />
       <option value="$PROJECT_DIR$/LogCollector.UnitTests/Controllers/LogControllertests.cs" />
+      <option value="$PROJECT_DIR$/logs/Authentication.log" />
+      <option value="$PROJECT_DIR$/logs/Sample.log" />
+      <option value="$PROJECT_DIR$/logs/Connection.log" />
+      <option value="$PROJECT_DIR$/LogCollector/LogCollector.csproj" />
+      <option value="$PROJECT_DIR$/LogCollector/LogCollector.dockerfile" />
+      <option value="$PROJECT_DIR$/docker-compose.yaml" />
+      <option value="$PROJECT_DIR$/LogCollector/Configuration/LogCollectorConfiguration.cs" />
+      <option value="$PROJECT_DIR$/LogCollector/Controllers/LogsController.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="27t73tKzBAWAngEUJbhy43Kd8ap" />
@@ -44,12 +61,15 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="DebuggerViewTab_PTCS_FirstProportionKey" value="0.34971997" />
+    <property name="DebuggerViewTab_PTCS_LastProportionKey" value="0.0" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
-  <component name="RunManager" selected="Docker.docker-compose.yaml.LogCollector: Compose Deployment">
+  <component name="RunManager" selected=".NET Launch Settings Profile.LogCollector">
     <configuration name="LogCollector" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
       <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/LogCollector/LogCollector.csproj" />
       <option name="LAUNCH_PROFILE_TFM" value="net6.0" />
@@ -80,6 +100,23 @@
         <option name="Build" />
       </method>
     </configuration>
+    <configuration name="LogCollector" type="docker-deploy" factoryName="docker-compose.yml" server-name="Docker">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="envFilePath" value="" />
+          <option name="commandLineOptions" value="--build" />
+          <option name="services">
+            <list>
+              <option value="LogCollector" />
+            </list>
+          </option>
+          <option name="sourceFilePath" value="docker-compose.yaml" />
+          <option name="upExitCodeFromService" value="" />
+          <option name="upTimeout" value="" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
     <configuration name="docker-compose.yaml.LogCollector: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
       <deployment type="docker-compose.yml">
         <settings>
@@ -93,6 +130,12 @@
       </deployment>
       <method v="2" />
     </configuration>
+    <list>
+      <item itemvalue=".NET Launch Settings Profile.LogCollector" />
+      <item itemvalue=".NET Launch Settings Profile.LogCollector: IIS Express" />
+      <item itemvalue="Docker.LogCollector" />
+      <item itemvalue="Docker.docker-compose.yaml.LogCollector: Compose Deployment" />
+    </list>
     <recent_temporary>
       <list>
         <item itemvalue="Docker.docker-compose.yaml.LogCollector: Compose Deployment" />
@@ -129,5 +172,24 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/LogCollector/Controllers/LogsController.cs</url>
+          <line>32</line>
+          <properties documentPath="$PROJECT_DIR$/LogCollector/Controllers/LogsController.cs" initialLine="25" containingFunctionPresentation="method 'GetLogs'">
+            <startOffsets>
+              <option value="1064" />
+            </startOffsets>
+            <endOffsets>
+              <option value="1096" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
