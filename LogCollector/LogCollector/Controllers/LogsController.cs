@@ -30,14 +30,12 @@ namespace LogCollector.Controllers
         {
             try
             {
-                if (_eventReadingService.FileExists(filename))
-                {
-                    var results = _eventReadingService.ReadEventsFromFile(filename);
-                    return results.Any() 
-                        ? Ok(_eventFilteringService.FilterNumberOfEvents(results, DefaultNumberOfEvents)) 
-                        : Ok("Log does not contain any events.");
-                }
-                return Ok("File does not exist.");
+                if (!_eventReadingService.FileExists(filename)) return Ok("File does not exist.");
+                // Use a space to return all results
+                var results = _eventReadingService.ReadEventsWithKeywordFromFile(filename, " ");
+                return results.Any() 
+                    ? Ok(_eventFilteringService.FilterNumberOfEvents(results, DefaultNumberOfEvents)) 
+                    : Ok("Log does not contain any events.");
             }
             catch (IOException e)
             {
@@ -53,7 +51,44 @@ namespace LogCollector.Controllers
             try
             {
                 if (!_eventReadingService.FileExists(filename)) return Ok("File does not exist.");
-                var results = _eventReadingService.ReadEventsFromFile(filename);
+                // Use a space to return all results
+                var results = _eventReadingService.ReadEventsWithKeywordFromFile(filename, " ");
+                return !results.Any() ? 
+                    Ok("Log does not contain any events.") : Ok(_eventFilteringService.FilterNumberOfEvents(results, numberOfEvents));
+            }
+            catch (IOException e)
+            {
+                _logger.LogError("Error reading log files");
+                return BadRequest("Error reading log files");
+            }
+        }
+        
+        [HttpGet]
+        [Route("GetLogsWithKeywordByFilename")]
+        public IActionResult GetLogs(string filename, string keyword)
+        {
+            try
+            {
+                if (!_eventReadingService.FileExists(filename)) return Ok("File does not exist.");
+                var results = _eventReadingService.ReadEventsWithKeywordFromFile(filename, keyword);
+                return !results.Any() ? 
+                    Ok("Log does not contain any events.") : Ok(_eventFilteringService.FilterNumberOfEvents(results, DefaultNumberOfEvents));
+            }
+            catch (IOException e)
+            {
+                _logger.LogError("Error reading log files");
+                return BadRequest("Error reading log files");
+            }
+        }
+        
+        [HttpGet]
+        [Route("GetNumberOfLogsWithKeywordByFilename")]
+        public IActionResult GetLogs(string filename, int numberOfEvents, string keyword)
+        {
+            try
+            {
+                if (!_eventReadingService.FileExists(filename)) return Ok("File does not exist.");
+                var results = _eventReadingService.ReadEventsWithKeywordFromFile(filename, keyword);
                 return !results.Any() ? 
                     Ok("Log does not contain any events.") : Ok(_eventFilteringService.FilterNumberOfEvents(results, numberOfEvents));
             }

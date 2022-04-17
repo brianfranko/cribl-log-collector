@@ -5,7 +5,7 @@ namespace LogCollector.Services
 {
     public interface IEventReadingService
     {
-        IEnumerable<Event> ReadEventsFromFile(string file);
+        IEnumerable<Event> ReadEventsWithKeywordFromFile(string file, string keyword);
 
         bool FileExists(string filename);
     }

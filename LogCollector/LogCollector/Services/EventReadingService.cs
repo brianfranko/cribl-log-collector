@@ -20,7 +20,7 @@ namespace LogCollector.Services
             _logger = logger;
         }
 
-        public IEnumerable<Event> ReadEventsFromFile(string filename)
+        public IEnumerable<Event> ReadEventsWithKeywordFromFile(string filename, string keyword)
         {
             var results = new List<Event>();
             filename = filename + ".log";
@@ -31,9 +31,8 @@ namespace LogCollector.Services
                 var logEvent = new Event();
                 logEvent.timestamp = log.Substring(0, 15).Trim();
                 logEvent.Message = log.Substring(15).Trim();
-                results.Add(logEvent);
+                if (logEvent.Message.Contains(keyword)) results.Add(logEvent);
             }
-
             return results;
         }
 
