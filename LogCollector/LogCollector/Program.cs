@@ -1,3 +1,4 @@
+using LogCollector.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -10,6 +11,8 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+builder.Services.AddScoped<IEventReadingService, EventReadingService>();
+builder.Services.AddScoped<IEventFilteringService, EventFilteringService>();
 
 var app = builder.Build();
 

@@ -5,9 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d8d6fc87-2311-47cf-8310-b8bb629eeed8" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/LogCollector/Domain/Event.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/LogCollector/Services/EventFilteringService.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/LogCollector/Services/EventReadingService.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/LogCollector/Services/IEventFilteringService.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/LogCollector/Services/IEventReadingService.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.LogCollector/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.LogCollector/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/LogCollector/Controllers/LogsController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/LogCollector/Controllers/LogsController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LogCollector/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/LogCollector/Program.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,15 +26,16 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/06FEAA24-EB4D-4490-A520-D3C4281C9864/1A2/ObjectResult.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/06FEAA24-EB4D-4490-A520-D3C4281C9864/1A3/OkObjectResult.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/LogCollector/Program.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/7DFD6C96-F562-4D4E-B0CE-F1C6F8423FB4/4/SwaggerMiddleware.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/263CE890-5218-437E-A6AD-28B0E0CA7AA8/1/SwaggerUIBuilderExtensions.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/LogCollector/Controllers/LogsController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/LogCollector/Controllers/WeatherForecastController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/9027F985-76E7-4778-87D9-D1CD708CBFDF/3BA/File.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
       <option value="$PROJECT_DIR$/LogCollector/Controllers/WeatherForecastController.cs" />
       <option value="$PROJECT_DIR$/LogCollector/WeatherForecast.cs" />
-      <option value="$PROJECT_DIR$/LogCollector/Program.cs" />
       <option value="$PROJECT_DIR$/.gitignore" />
       <option value="$PROJECT_DIR$/LogCollectorTests/Controllers/WeatherForecastControllerTests.cs" />
       <option value="$PROJECT_DIR$/LogCollector.UnitTests/Controllers/WeatherForecastControllerTests.cs" />
@@ -48,6 +53,11 @@
       <option value="$PROJECT_DIR$/LogCollector/appsettings.Development.json" />
       <option value="$PROJECT_DIR$/LogCollector/appsettings.json" />
       <option value="$PROJECT_DIR$/LogCollector/Domain/Event.cs" />
+      <option value="$PROJECT_DIR$/LogCollector/Services/IEventReadingService.cs" />
+      <option value="$PROJECT_DIR$/LogCollector/Services/IEventFilteringService.cs" />
+      <option value="$PROJECT_DIR$/LogCollector/Services/EventFilteringService.cs" />
+      <option value="$PROJECT_DIR$/LogCollector/Program.cs" />
+      <option value="$PROJECT_DIR$/LogCollector/Services/EventReadingService.cs" />
       <option value="$PROJECT_DIR$/LogCollector/Controllers/LogsController.cs" />
     </changedPaths>
   </component>
@@ -174,17 +184,17 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/LogCollector/Controllers/LogsController.cs</url>
-          <line>37</line>
-          <properties documentPath="$PROJECT_DIR$/LogCollector/Controllers/LogsController.cs" initialLine="25" containingFunctionPresentation="method 'GetLogs'">
+          <url>file://$PROJECT_DIR$/LogCollector/Services/EventReadingService.cs</url>
+          <line>41</line>
+          <properties documentPath="$PROJECT_DIR$/LogCollector/Services/EventReadingService.cs" initialLine="40" containingFunctionPresentation="method 'FileExists'">
             <startOffsets>
-              <option value="1229" />
+              <option value="1443" />
             </startOffsets>
             <endOffsets>
-              <option value="1261" />
+              <option value="1472" />
             </endOffsets>
           </properties>
-          <option name="timeStamp" value="1" />
+          <option name="timeStamp" value="3" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

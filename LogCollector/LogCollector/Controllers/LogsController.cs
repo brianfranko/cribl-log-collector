@@ -1,12 +1,7 @@
-using System;
-using System.Collections.Generic;
-using System.Globalization;
 using System.IO;
 using System.Linq;
-using System.Reflection;
-using System.Threading.Tasks;
 using LogCollector.Configuration;
-using LogCollector.Domain;
+using LogCollector.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
@@ -18,45 +13,55 @@ namespace LogCollector.Controllers
     public class LogsController : ControllerBase
     {
         private readonly ILogger<LogsController> _logger;
-        private readonly LogCollectorConfiguration _configuration;
+        private readonly IEventReadingService _eventReadingService;
+        private readonly IEventFilteringService _eventFilteringService;
+        private const int DefaultNumberOfEvents = 250;
 
-        public LogsController(ILogger<LogsController> logger, IConfiguration configuration)
+        public LogsController(ILogger<LogsController> logger, IEventReadingService eventReadingService, IEventFilteringService eventFilteringService)
         {
             _logger = logger;
-            _configuration = new LogCollectorConfiguration();
-            configuration.GetSection(LogCollectorConfiguration.LogCollector).Bind(_configuration);
+            _eventReadingService = eventReadingService;
+            _eventFilteringService = eventFilteringService;
         }
         
         [HttpGet]
-        [Route("filename/{filename}")]
-        public async Task<ActionResult> GetLogs(string filename)
+        [Route("GetLogsByFilename")]
+        public IActionResult GetLogs(string filename)
         {
             try
             {
-                filename = filename + ".log";
-                var path = Path.Combine(_configuration.LogsLocation, filename);
-                if (System.IO.File.Exists(path))
+                if (_eventReadingService.FileExists(filename))
                 {
-                    var events = System.IO.File.ReadLines(path);
-                    var results = new List<Event>();
-                    foreach (var log in events.Reverse())
-                    {
-                        var logEvent = new Event();
-                        logEvent.timestamp = log.Substring(0, 15).Trim();
-                        logEvent.Message = log.Substring(15).Trim();
-                        results.Add(logEvent);
-                    }
-                    return await Task.FromResult(Ok(results));
+                    var results = _eventReadingService.ReadEventsFromFile(filename);
+                    return results.Any() 
+                        ? Ok(_eventFilteringService.FilterNumberOfEvents(results, DefaultNumberOfEvents)) 
+                        : Ok("Log does not contain any events.");
                 }
-
-                return await Task.FromResult(Ok("file does not exist"));
+                return Ok("File does not exist.");
             }
             catch (IOException e)
             {
                 _logger.LogError("Error reading log files");
                 return BadRequest("Error reading log files");
             }
-            
+        }
+        
+        [HttpGet]
+        [Route("GetNumberOfLogsByFilename")]
+        public IActionResult GetLogs(string filename, int numberOfEvents)
+        {
+            try
+            {
+                if (!_eventReadingService.FileExists(filename)) return Ok("File does not exist.");
+                var results = _eventReadingService.ReadEventsFromFile(filename);
+                return !results.Any() ? 
+                    Ok("Log does not contain any events.") : Ok(_eventFilteringService.FilterNumberOfEvents(results, numberOfEvents));
+            }
+            catch (IOException e)
+            {
+                _logger.LogError("Error reading log files");
+                return BadRequest("Error reading log files");
+            }
         }
 
     }
