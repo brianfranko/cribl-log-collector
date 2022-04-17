@@ -3,7 +3,7 @@ using LogCollector.Domain;
 
 namespace LogCollector.Services
 {
-    public interface IEventReadingService
+    public interface IEventReaderService
     {
         IEnumerable<Event> ReadEventsWithKeywordFromFile(string file, string keyword);
 

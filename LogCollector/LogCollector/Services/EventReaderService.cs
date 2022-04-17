@@ -8,15 +8,14 @@ using Microsoft.Extensions.Logging;
 
 namespace LogCollector.Services
 {
-    public class EventReadingService : IEventReadingService
+    public class EventReaderService : IEventReaderService
     {
         private readonly LogCollectorConfiguration _configuration;
-        private readonly ILogger<EventReadingService> _logger;
+        private readonly ILogger<EventReaderService> _logger;
 
-        public EventReadingService(IConfiguration configuration, ILogger<EventReadingService> logger)
+        public EventReaderService(LogCollectorConfiguration configuration, ILogger<EventReaderService> logger)
         {
-            _configuration = new LogCollectorConfiguration();
-            configuration.GetSection(LogCollectorConfiguration.LogCollector).Bind(_configuration);
+            _configuration = configuration;
             _logger = logger;
         }
 

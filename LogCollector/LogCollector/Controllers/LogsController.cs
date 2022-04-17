@@ -13,15 +13,15 @@ namespace LogCollector.Controllers
     public class LogsController : ControllerBase
     {
         private readonly ILogger<LogsController> _logger;
-        private readonly IEventReadingService _eventReadingService;
-        private readonly IEventFilteringService _eventFilteringService;
+        private readonly IEventReaderService _eventReaderService;
+        private readonly IEventFilterService _eventFilterService;
         private const int DefaultNumberOfEvents = 250;
 
-        public LogsController(ILogger<LogsController> logger, IEventReadingService eventReadingService, IEventFilteringService eventFilteringService)
+        public LogsController(ILogger<LogsController> logger, IEventReaderService eventReaderService, IEventFilterService eventFilterService)
         {
             _logger = logger;
-            _eventReadingService = eventReadingService;
-            _eventFilteringService = eventFilteringService;
+            _eventReaderService = eventReaderService;
+            _eventFilterService = eventFilterService;
         }
         
         [HttpGet]
@@ -30,11 +30,11 @@ namespace LogCollector.Controllers
         {
             try
             {
-                if (!_eventReadingService.FileExists(filename)) return Ok("File does not exist.");
+                if (!_eventReaderService.FileExists(filename)) return Ok("File does not exist.");
                 // Use a space to return all results
-                var results = _eventReadingService.ReadEventsWithKeywordFromFile(filename, " ");
+                var results = _eventReaderService.ReadEventsWithKeywordFromFile(filename, " ");
                 return results.Any() 
-                    ? Ok(_eventFilteringService.FilterNumberOfEvents(results, DefaultNumberOfEvents)) 
+                    ? Ok(_eventFilterService.FilterNumberOfEvents(results, DefaultNumberOfEvents)) 
                     : Ok("Log does not contain any events.");
             }
             catch (IOException e)
@@ -50,11 +50,11 @@ namespace LogCollector.Controllers
         {
             try
             {
-                if (!_eventReadingService.FileExists(filename)) return Ok("File does not exist.");
+                if (!_eventReaderService.FileExists(filename)) return Ok("File does not exist.");
                 // Use a space to return all results
-                var results = _eventReadingService.ReadEventsWithKeywordFromFile(filename, " ");
+                var results = _eventReaderService.ReadEventsWithKeywordFromFile(filename, " ");
                 return !results.Any() ? 
-                    Ok("Log does not contain any events.") : Ok(_eventFilteringService.FilterNumberOfEvents(results, numberOfEvents));
+                    Ok("Log does not contain any events.") : Ok(_eventFilterService.FilterNumberOfEvents(results, numberOfEvents));
             }
             catch (IOException e)
             {
@@ -69,10 +69,10 @@ namespace LogCollector.Controllers
         {
             try
             {
-                if (!_eventReadingService.FileExists(filename)) return Ok("File does not exist.");
-                var results = _eventReadingService.ReadEventsWithKeywordFromFile(filename, keyword);
+                if (!_eventReaderService.FileExists(filename)) return Ok("File does not exist.");
+                var results = _eventReaderService.ReadEventsWithKeywordFromFile(filename, keyword);
                 return !results.Any() ? 
-                    Ok("Log does not contain any events.") : Ok(_eventFilteringService.FilterNumberOfEvents(results, DefaultNumberOfEvents));
+                    Ok("Log does not contain any events for that keyword.") : Ok(_eventFilterService.FilterNumberOfEvents(results, DefaultNumberOfEvents));
             }
             catch (IOException e)
             {
@@ -87,10 +87,10 @@ namespace LogCollector.Controllers
         {
             try
             {
-                if (!_eventReadingService.FileExists(filename)) return Ok("File does not exist.");
-                var results = _eventReadingService.ReadEventsWithKeywordFromFile(filename, keyword);
+                if (!_eventReaderService.FileExists(filename)) return Ok("File does not exist.");
+                var results = _eventReaderService.ReadEventsWithKeywordFromFile(filename, keyword);
                 return !results.Any() ? 
-                    Ok("Log does not contain any events.") : Ok(_eventFilteringService.FilterNumberOfEvents(results, numberOfEvents));
+                    Ok("Log does not contain any events for that keyword.") : Ok(_eventFilterService.FilterNumberOfEvents(results, numberOfEvents));
             }
             catch (IOException e)
             {

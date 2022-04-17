@@ -3,7 +3,7 @@ using LogCollector.Domain;
 
 namespace LogCollector.Services
 {
-    public interface IEventFilteringService
+    public interface IEventFilterService
     {
         IEnumerable<Event> FilterNumberOfEvents(IEnumerable<Event> events, int numberOfEvents);
     }

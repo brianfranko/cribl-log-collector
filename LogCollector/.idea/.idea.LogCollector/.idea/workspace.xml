@@ -5,9 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d8d6fc87-2311-47cf-8310-b8bb629eeed8" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/LogCollector.UnitTests/Services/EventReaderServiceTests.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/LogCollector.UnitTests/appsettings.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/LogCollector.UnitTests/logs/Connection.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.LogCollector/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.LogCollector/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LogCollector.UnitTests/Controllers/LogControllertests.cs" beforeDir="false" afterPath="$PROJECT_DIR$/LogCollector.UnitTests/Controllers/LogControllertests.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LogCollector.UnitTests/LogCollector.UnitTests.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/LogCollector.UnitTests/LogCollector.UnitTests.csproj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/LogCollector/Controllers/LogsController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/LogCollector/Controllers/LogsController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LogCollector/Services/EventReadingService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/LogCollector/Services/EventReadingService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LogCollector/Services/IEventReadingService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/LogCollector/Services/IEventReadingService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LogCollector/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/LogCollector/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LogCollector/Services/EventFilteringService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/LogCollector/Services/EventFilterService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LogCollector/Services/EventReadingService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/LogCollector/Services/EventReaderService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LogCollector/Services/IEventFilteringService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/LogCollector/Services/IEventFilterService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LogCollector/Services/IEventReadingService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/LogCollector/Services/IEventReaderService.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,8 +46,6 @@
       <option value="$PROJECT_DIR$/LogCollector.UnitTests/Controllers/WeatherForecastControllerTests.cs" />
       <option value="$PROJECT_DIR$/LogCollector.UnitTests/UnitTest1.cs" />
       <option value="$PROJECT_DIR$/LogCollector/Controllers/LogController.cs" />
-      <option value="$PROJECT_DIR$/LogCollector.UnitTests/LogCollector.UnitTests.csproj" />
-      <option value="$PROJECT_DIR$/LogCollector.UnitTests/Controllers/LogControllertests.cs" />
       <option value="$PROJECT_DIR$/logs/Authentication.log" />
       <option value="$PROJECT_DIR$/logs/Sample.log" />
       <option value="$PROJECT_DIR$/logs/Connection.log" />
@@ -51,10 +58,20 @@
       <option value="$PROJECT_DIR$/LogCollector/Domain/Event.cs" />
       <option value="$PROJECT_DIR$/LogCollector/Services/IEventFilteringService.cs" />
       <option value="$PROJECT_DIR$/LogCollector/Services/EventFilteringService.cs" />
-      <option value="$PROJECT_DIR$/LogCollector/Program.cs" />
       <option value="$PROJECT_DIR$/LogCollector/Services/EventReadingService.cs" />
       <option value="$PROJECT_DIR$/LogCollector/Services/IEventReadingService.cs" />
+      <option value="$PROJECT_DIR$/LogCollector/Services/IEventFilterService.cs" />
+      <option value="$PROJECT_DIR$/LogCollector/Services/EventFilterService.cs" />
+      <option value="$PROJECT_DIR$/LogCollector/Services/IEventReaderService.cs" />
       <option value="$PROJECT_DIR$/LogCollector/Controllers/LogsController.cs" />
+      <option value="$PROJECT_DIR$/LogCollector.UnitTests/appsettings.json" />
+      <option value="$PROJECT_DIR$/LogCollector.UnitTests/Controllers/LogControllertests.cs" />
+      <option value="$PROJECT_DIR$/LogCollector.UnitTests/LogCollector.UnitTests.csproj" />
+      <option value="$PROJECT_DIR$/LogCollector/Services/EventReaderService.cs" />
+      <option value="$PROJECT_DIR$/LogCollector/Program.cs" />
+      <option value="$PROJECT_DIR$/LogCollector/logs/Connection.log" />
+      <option value="$PROJECT_DIR$/LogCollector.UnitTests/logs/Connection.log" />
+      <option value="$PROJECT_DIR$/LogCollector.UnitTests/Services/EventReaderServiceTests.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="27t73tKzBAWAngEUJbhy43Kd8ap" />
@@ -180,17 +197,30 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/LogCollector/Services/EventReadingService.cs</url>
+          <url>file://$PROJECT_DIR$/LogCollector/Services/EventReaderService.cs</url>
           <line>40</line>
           <properties documentPath="$PROJECT_DIR$/LogCollector/Services/EventReadingService.cs" initialLine="40" containingFunctionPresentation="method 'FileExists'">
             <startOffsets>
-              <option value="1509" />
+              <option value="1398" />
             </startOffsets>
             <endOffsets>
-              <option value="1538" />
+              <option value="1427" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/LogCollector.UnitTests/Services/EventReaderServiceTests.cs</url>
+          <line>39</line>
+          <properties documentPath="$PROJECT_DIR$/LogCollector.UnitTests/Services/EventReaderServiceTests.cs" initialLine="38" containingFunctionPresentation="method 'EventReaderServiceFiltersByKeyWordAcurrarely'">
+            <startOffsets>
+              <option value="1253" />
+            </startOffsets>
+            <endOffsets>
+              <option value="1338" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="7" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
