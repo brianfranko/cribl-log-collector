@@ -1,7 +1,12 @@
+using System;
+using System.Collections.Generic;
+using System.Globalization;
 using System.IO;
+using System.Linq;
 using System.Reflection;
 using System.Threading.Tasks;
 using LogCollector.Configuration;
+using LogCollector.Domain;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
@@ -33,7 +38,15 @@ namespace LogCollector.Controllers
                 if (System.IO.File.Exists(path))
                 {
                     var events = System.IO.File.ReadLines(path);
-                    return await Task.FromResult(Ok(events));
+                    var results = new List<Event>();
+                    foreach (var log in events.Reverse())
+                    {
+                        var logEvent = new Event();
+                        logEvent.timestamp = log.Substring(0, 15).Trim();
+                        logEvent.Message = log.Substring(15).Trim();
+                        results.Add(logEvent);
+                    }
+                    return await Task.FromResult(Ok(results));
                 }
 
                 return await Task.FromResult(Ok("file does not exist"));
