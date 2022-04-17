@@ -3,7 +3,6 @@ using System.IO;
 using System.Linq;
 using LogCollector.Configuration;
 using LogCollector.Domain;
-using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 
 namespace LogCollector.Services
