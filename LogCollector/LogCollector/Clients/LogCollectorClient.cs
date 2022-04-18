@@ -28,7 +28,7 @@ namespace LogCollector.Clients
                 response.EnsureSuccessStatusCode();
                 string responseBody = await response.Content.ReadAsStringAsync();
                 var events = JsonSerializer.Deserialize<List<Event>>(responseBody);
-                return events;
+                return events ?? new List<Event>();
             }
             catch (HttpRequestException e)
             {
