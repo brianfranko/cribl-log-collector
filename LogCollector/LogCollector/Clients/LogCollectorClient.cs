@@ -28,18 +28,33 @@ namespace LogCollector.Clients
                 var response = await _httpClient.GetAsync(uri);
                 response.EnsureSuccessStatusCode();
                 string responseBody = await response.Content.ReadAsStringAsync();
-                var events = JsonSerializer.Deserialize<List<Event>>(responseBody);
-                return events == null
-                    ? new MachineEvents()
+                try
+                {
+                    var events = JsonSerializer.Deserialize<List<Event>>(responseBody);
+                    return events == null
+                        ? new MachineEvents()
+                        {
+                            machine = machine,
+                            message = "Failed to get logs from machine."
+                        }
+                        : new MachineEvents()
+                        {
+                            machine = machine,
+                            events = events
+                        };
+                }
+                // TODO: Update the response code when the file does not exist to handle this better.
+                catch (JsonException je)
+                {
+                    // If the file does not exist we will return 200 but we will not be able to parse the list of events.
+                    return new MachineEvents()
                     {
                         machine = machine,
-                        message = "Failed to get logs from machine."
-                    }
-                    : new MachineEvents()
-                    {
-                        machine = machine,
-                        events = events
+                        message = responseBody
                     };
+                }
+                
+                
             }
             catch (HttpRequestException e)
             {

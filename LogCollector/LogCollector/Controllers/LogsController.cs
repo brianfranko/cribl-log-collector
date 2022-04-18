@@ -28,9 +28,9 @@ namespace LogCollector.Controllers
         {
             try
             {
-                if (!_eventReaderService.FileExists(filename)) return Ok("File does not exist.");
+                if (!_eventReaderService.FileExists(filename, out string path)) return Ok("File does not exist.");
                 // Use a space to return all results
-                var results = _eventReaderService.ReadEventsWithKeywordFromFile(filename, " ");
+                var results = _eventReaderService.ReadEventsWithKeywordFromFile(path, " ");
                 return results.Any() 
                     ? Ok(_eventFilterService.FilterNumberOfEvents(results, DefaultNumberOfEvents)) 
                     : Ok("Log does not contain any events.");
@@ -48,9 +48,9 @@ namespace LogCollector.Controllers
         {
             try
             {
-                if (!_eventReaderService.FileExists(filename)) return Ok("File does not exist.");
+                if (!_eventReaderService.FileExists(filename, out string path)) return Ok("File does not exist.");
                 // Use a space to return all results
-                var results = _eventReaderService.ReadEventsWithKeywordFromFile(filename, " ");
+                var results = _eventReaderService.ReadEventsWithKeywordFromFile(path, " ");
                 return !results.Any() ? 
                     Ok("Log does not contain any events.") : Ok(_eventFilterService.FilterNumberOfEvents(results, numberOfEvents));
             }
@@ -67,8 +67,8 @@ namespace LogCollector.Controllers
         {
             try
             {
-                if (!_eventReaderService.FileExists(filename)) return Ok("File does not exist.");
-                var results = _eventReaderService.ReadEventsWithKeywordFromFile(filename, keyword);
+                if (!_eventReaderService.FileExists(filename, out string path)) return Ok("File does not exist.");
+                var results = _eventReaderService.ReadEventsWithKeywordFromFile(path, keyword);
                 return !results.Any() ? 
                     Ok("Log does not contain any events for that keyword.") : Ok(_eventFilterService.FilterNumberOfEvents(results, DefaultNumberOfEvents));
             }
@@ -85,8 +85,8 @@ namespace LogCollector.Controllers
         {
             try
             {
-                if (!_eventReaderService.FileExists(filename)) return Ok("File does not exist.");
-                var results = _eventReaderService.ReadEventsWithKeywordFromFile(filename, keyword);
+                if (!_eventReaderService.FileExists(filename, out string path)) return Ok("File does not exist.");
+                var results = _eventReaderService.ReadEventsWithKeywordFromFile(path, keyword);
                 return !results.Any() ? 
                     Ok("Log does not contain any events for that keyword.") : Ok(_eventFilterService.FilterNumberOfEvents(results, numberOfEvents));
             }
