@@ -43,7 +43,7 @@ namespace LogCollector.UnitTests.Controllers
             {
                 new Event
                 {
-                    Message = "test message",
+                    message = "test message",
                     timestamp = "datetime"
                 }
             };
@@ -63,22 +63,22 @@ namespace LogCollector.UnitTests.Controllers
             {
                 new Event
                 {
-                    Message = "test message 1",
+                    message = "test message 1",
                     timestamp = "datetime"
                 },
                 new Event
                 {
-                    Message = "test message 2",
+                    message = "test message 2",
                     timestamp = "datetime"
                 },
                 new Event
                 {
-                    Message = "test message 3",
+                    message = "test message 3",
                     timestamp = "datetime"
                 },
                 new Event
                 {
-                    Message = "test message 4",
+                    message = "test message 4",
                     timestamp = "datetime"
                 }
             };
@@ -86,12 +86,12 @@ namespace LogCollector.UnitTests.Controllers
             {
                 new Event
                 {
-                    Message = "test message 1",
+                    message = "test message 1",
                     timestamp = "datetime"
                 },
                 new Event
                 {
-                    Message = "test message 2",
+                    message = "test message 2",
                     timestamp = "datetime"
                 }
             };

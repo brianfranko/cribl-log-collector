@@ -22,7 +22,7 @@
     </ItemGroup>
 
     <ItemGroup>
-      <Content Include="logs\**">
+      <Content Include="..\LogCollector\logs\**">
         <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       </Content>
     </ItemGroup>

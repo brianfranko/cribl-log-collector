@@ -10,5 +10,4 @@ services:
     environment:
       - ASPNETCORE_ENVIRONMENT=Production
     volumes:
-    - ./logs/:/var/logs
-    
+    - ./logs/:/var/logs    

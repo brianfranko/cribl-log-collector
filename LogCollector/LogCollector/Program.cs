@@ -1,3 +1,5 @@
+using System.Net.Http;
+using LogCollector.Clients;
 using LogCollector.Configuration;
 using LogCollector.Services;
 using Microsoft.AspNetCore.Builder;
@@ -20,21 +22,18 @@ builder.Services.AddSingleton(s =>
     config.GetSection(LogCollectorConfiguration.LogCollector).Bind(logCollectorConfiguration);
     return logCollectorConfiguration;
 });
+builder.Services.AddSingleton<HttpClient>();
 builder.Services.AddScoped<IEventReaderService, EventReaderService>();
 builder.Services.AddScoped<IEventFilterService, EventFilterService>();
+builder.Services.AddScoped<ILogCollectorClient, LogCollectorClient>();
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
-{
-    app.UseSwagger();
-    app.UseSwaggerUI();
-}
+app.UseSwagger();
+app.UseSwaggerUI();
 
-app.UseHttpsRedirection();
-
-app.UseAuthorization();
+//app.UseHttpsRedirection();
+//app.UseAuthorization();
 
 app.MapControllers();
 

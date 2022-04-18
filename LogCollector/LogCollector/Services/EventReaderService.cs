@@ -28,8 +28,8 @@ namespace LogCollector.Services
             {
                 var logEvent = new Event();
                 logEvent.timestamp = log.Substring(0, 15).Trim();
-                logEvent.Message = log.Substring(15).Trim();
-                if (logEvent.Message.Contains(keyword)) results.Add(logEvent);
+                logEvent.message = log.Substring(15).Trim();
+                if (logEvent.message.Contains(keyword)) results.Add(logEvent);
             }
             return results;
         }
