@@ -33,13 +33,13 @@ namespace LogCollector.UnitTests.Services
                 new Event()
                 {
                     timestamp = "Jun 17 20:55:06",
-                    Message = "combo ftpd[30755]: connection from 82.252.162.81 (lns-vlq-45-tou-82-252-162-81.adsl.proxad.net) at Fri Jun 17 20:55:06 2005"
+                    message = "combo ftpd[30755]: connection from 82.252.162.81 (lns-vlq-45-tou-82-252-162-81.adsl.proxad.net) at Fri Jun 17 20:55:06 2005"
                 }
             };
             var eventReaderService = new EventReaderService(_configuration, _mockLogger.Object);
             var actual = eventReaderService.ReadEventsWithKeywordFromFile("Connection", "30755");
             Assert.AreEqual(expected.Count, actual.Count());
-            Assert.AreEqual(expected.First().Message, actual.First().Message);
+            Assert.AreEqual(expected.First().message, actual.First().message);
         }
         
         [Test]
@@ -50,23 +50,23 @@ namespace LogCollector.UnitTests.Services
                 new Event()
                 {
                     timestamp = "Jun 17 20:55:06",
-                    Message = "combo ftpd[30753]: connection from 82.252.162.81 (lns-vlq-45-tou-82-252-162-81.adsl.proxad.net) at Fri Jun 17 20:55:06 2005"
+                    message = "combo ftpd[30753]: connection from 82.252.162.81 (lns-vlq-45-tou-82-252-162-81.adsl.proxad.net) at Fri Jun 17 20:55:06 2005"
                 },
                 new Event()
                 {
                     timestamp = "Jun 17 20:55:06",
-                    Message = "combo ftpd[30754]: connection from 82.252.162.81 (lns-vlq-45-tou-82-252-162-81.adsl.proxad.net) at Fri Jun 17 20:55:06 2005"
+                    message = "combo ftpd[30754]: connection from 82.252.162.81 (lns-vlq-45-tou-82-252-162-81.adsl.proxad.net) at Fri Jun 17 20:55:06 2005"
                 },
                 new Event()
                 {
                     timestamp = "Jun 17 20:55:06",
-                    Message = "combo ftpd[30755]: connection from 82.252.162.81 (lns-vlq-45-tou-82-252-162-81.adsl.proxad.net) at Fri Jun 17 20:55:06 2005"
+                    message = "combo ftpd[30755]: connection from 82.252.162.81 (lns-vlq-45-tou-82-252-162-81.adsl.proxad.net) at Fri Jun 17 20:55:06 2005"
                 }
             };
             var eventReaderService = new EventReaderService(_configuration, _mockLogger.Object);
             var actual = eventReaderService.ReadEventsWithKeywordFromFile("Connection", " ");
             Assert.AreEqual(expected.Count, actual.Count());
-            Assert.AreEqual(expected.First().Message, actual.First().Message);
+            Assert.AreEqual(expected.First().message, actual.First().message);
         }
 
         [Test]

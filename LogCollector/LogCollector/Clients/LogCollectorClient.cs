@@ -1,36 +1,47 @@
+using System;
 using System.Collections.Generic;
 using System.Net.Http;
+using System.Text.Json;
+using System.Threading.Tasks;
 using LogCollector.Domain;
+using Microsoft.Extensions.Logging;
 
 namespace LogCollector.Clients
 {
     public class LogCollectorClient : ILogCollectorClient
     {
         private readonly HttpClient _httpClient;
+        private readonly ILogger<LogCollectorClient> _logger;
 
-        public LogCollectorClient(HttpClient httpClient)
+        public LogCollectorClient(HttpClient httpClient, ILogger<LogCollectorClient> logger)
         {
             _httpClient = httpClient;
+            _logger = logger;
         }
 
-        public IEnumerable<Event> GetLogs(string machine, string filename)
+        public async Task<IEnumerable<Event>> GetNumberOfLogsWithKeyword(string machine, string filename, int numberOfEvents = 250, string keyword = " ")
         {
-            throw new System.NotImplementedException();
+            try
+            {
+                var uri = BuildUri(machine, filename);
+                var response = await _httpClient.GetAsync(uri);
+                response.EnsureSuccessStatusCode();
+                string responseBody = await response.Content.ReadAsStringAsync();
+                var events = JsonSerializer.Deserialize<List<Event>>(responseBody);
+                return events;
+            }
+            catch (HttpRequestException e)
+            {
+                _logger.LogError(e.Message);
+            }
+
+            return await Task.FromResult(new List<Event>());
         }
 
-        public IEnumerable<Event> GetNumberOfEventsFromLogs(string machine, string filename, int numberOfEvents)
+        private Uri BuildUri(string machine, string filename, int numberOfEvents = 250, string keyword = "")
         {
-            throw new System.NotImplementedException();
-        }
-
-        public IEnumerable<Event> GetLogsWithKeyword(string machine, string filename, string keyword)
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public IEnumerable<Event> GetNumberOfLogsWithKeyword(string machine, string filename, int numberOfEvents, string keyword)
-        {
-            throw new System.NotImplementedException();
+            return new Uri($"http://{machine}/api/v1/Logs/GetNumberOfLogsWithKeywordByFilename?{filename}&numberOfevents={numberOfEvents}&keyword={keyword}");
+            
         }
     }
 }

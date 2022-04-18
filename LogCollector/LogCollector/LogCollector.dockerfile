@@ -14,8 +14,7 @@ WORKDIR /app
 COPY --from=build-env /app/out .
 
 EXPOSE 8080
-RUN chown -R 1001:80 ./
-RUN chmod -R 0500 ./
-RUN chmod -R 0700 *.dll 
-USER 1001
+EXPOSE 8081
+EXPOSE 8082
+
 ENTRYPOINT ["dotnet", "LogCollector.dll"]

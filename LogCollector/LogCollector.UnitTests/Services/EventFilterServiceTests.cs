@@ -14,17 +14,17 @@ namespace LogCollector.UnitTests.Services
            new Event()
            {
                timestamp = "Jun 17 20:55:06",
-               Message = "combo ftpd[30753]: connection from 82.252.162.81 (lns-vlq-45-tou-82-252-162-81.adsl.proxad.net) at Fri Jun 17 20:55:06 2005"
+               message = "combo ftpd[30753]: connection from 82.252.162.81 (lns-vlq-45-tou-82-252-162-81.adsl.proxad.net) at Fri Jun 17 20:55:06 2005"
            },
            new Event()
            {
                timestamp = "Jun 17 20:55:06",
-               Message = "combo ftpd[30754]: connection from 82.252.162.81 (lns-vlq-45-tou-82-252-162-81.adsl.proxad.net) at Fri Jun 17 20:55:06 2005"
+               message = "combo ftpd[30754]: connection from 82.252.162.81 (lns-vlq-45-tou-82-252-162-81.adsl.proxad.net) at Fri Jun 17 20:55:06 2005"
            },
            new Event()
            {
                timestamp = "Jun 17 20:55:06",
-               Message = "combo ftpd[30755]: connection from 82.252.162.81 (lns-vlq-45-tou-82-252-162-81.adsl.proxad.net) at Fri Jun 17 20:55:06 2005"
+               message = "combo ftpd[30755]: connection from 82.252.162.81 (lns-vlq-45-tou-82-252-162-81.adsl.proxad.net) at Fri Jun 17 20:55:06 2005"
            }
        };
         

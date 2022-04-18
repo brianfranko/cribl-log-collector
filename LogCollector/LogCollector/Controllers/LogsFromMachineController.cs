@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using LogCollector.Clients;
 using LogCollector.Domain;
 using Microsoft.AspNetCore.Mvc;
@@ -13,6 +14,7 @@ namespace LogCollector.Controllers
     {
         private readonly ILogCollectorClient _logCollectorClient;
         private ILogger<LogsFromMachineController> _logger;
+        private const int DefaultNumberOfEvents = 250;
 
         public LogsFromMachineController(ILogCollectorClient logCollectorClient,
             ILogger<LogsFromMachineController> logger)
@@ -23,7 +25,7 @@ namespace LogCollector.Controllers
         
         [HttpGet]
         [Route("GetLogsFromAllMachines")]
-        public ActionResult GetLogsFromMachines(string machines, string filename)
+        public async Task<ActionResult> GetLogsFromMachines(string machines, string filename)
         {
             var machineEvents = new List<MachineEvents>();
             foreach (var machine in machines.Split("%20"))
@@ -34,7 +36,7 @@ namespace LogCollector.Controllers
                 };
                 try
                 {
-                    var events = _logCollectorClient.GetLogs(machine, filename);
+                    var events = await _logCollectorClient.GetNumberOfLogsWithKeyword(machine, filename);
                     machineEvent.events = events;
                     machineEvents.Add(machineEvent);
                 }
@@ -50,7 +52,7 @@ namespace LogCollector.Controllers
         
         [HttpGet]
         [Route("GetNumberOfLogsFromAllMachines")]
-        public ActionResult GetLogsFromMachines(string machines, string filename, int numberOfEvents)
+        public async Task<ActionResult> GetLogsFromMachines(string machines, string filename, int numberOfEvents)
         {
             var machineEvents = new List<MachineEvents>();
             foreach (var machine in machines.Split("%20"))
@@ -61,7 +63,7 @@ namespace LogCollector.Controllers
                 };
                 try
                 {
-                    var events = _logCollectorClient.GetNumberOfEventsFromLogs(machine, filename, numberOfEvents);
+                    var events = await _logCollectorClient.GetNumberOfLogsWithKeyword(machine, filename, numberOfEvents);
                     machineEvent.events = events;
                     machineEvents.Add(machineEvent);
                 }
@@ -77,7 +79,7 @@ namespace LogCollector.Controllers
         
         [HttpGet]
         [Route("GetLogsWithKeywordFromAllMachines")]
-        public ActionResult GetLogsFromMachines(string machines, string filename, string keyword)
+        public async Task<ActionResult> GetLogsFromMachines(string machines, string filename, string keyword)
         {
             var machineEvents = new List<MachineEvents>();
             foreach (var machine in machines.Split("%20"))
@@ -88,7 +90,7 @@ namespace LogCollector.Controllers
                 };
                 try
                 {
-                    var events = _logCollectorClient.GetLogsWithKeyword(machine, filename, keyword);
+                    var events = await _logCollectorClient.GetNumberOfLogsWithKeyword(machine, filename, DefaultNumberOfEvents, keyword);
                     machineEvent.events = events;
                     machineEvents.Add(machineEvent);
                 }
@@ -104,7 +106,7 @@ namespace LogCollector.Controllers
         
         [HttpGet]
         [Route("GetNumberOfLogsWithKeywordFromAllMachines")]
-        public ActionResult GetLogsFromMachines(string machines, string filename, int numberOfEvents, string keyword)
+        public async Task<ActionResult> GetLogsFromMachines(string machines, string filename, int numberOfEvents, string keyword)
         {
             var machineEvents = new List<MachineEvents>();
             foreach (var machine in machines.Split("%20"))
@@ -115,7 +117,7 @@ namespace LogCollector.Controllers
                 };
                 try
                 {
-                    var events = _logCollectorClient.GetNumberOfLogsWithKeyword(machine, filename, numberOfEvents, keyword);
+                    var events = await _logCollectorClient.GetNumberOfLogsWithKeyword(machine, filename, numberOfEvents, keyword);
                     machineEvent.events = events;
                     machineEvents.Add(machineEvent);
                 }
