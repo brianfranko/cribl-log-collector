@@ -8,6 +8,7 @@ namespace LogCollector.Services
     {
         public IEnumerable<Event> FilterNumberOfEvents(IEnumerable<Event> events, int numberOfEvents)
         {
+            // Takes the first x amount of elements from a collection.
             return events.Take(numberOfEvents);
         }
     }

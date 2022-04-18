@@ -37,7 +37,7 @@ namespace LogCollector.UnitTests.Services
                 }
             };
             var eventReaderService = new EventReaderService(_configuration, _mockLogger.Object);
-            var actual = eventReaderService.ReadEventsWithKeywordFromFile("Connection", "30755");
+            var actual = eventReaderService.ReadEventsWithKeywordFromFile("./logs/Connection.log", "30755");
             Assert.AreEqual(expected.Count, actual.Count());
             Assert.AreEqual(expected.First().message, actual.First().message);
         }
@@ -50,22 +50,11 @@ namespace LogCollector.UnitTests.Services
                 new Event()
                 {
                     timestamp = "Jun 17 20:55:06",
-                    message = "combo ftpd[30753]: connection from 82.252.162.81 (lns-vlq-45-tou-82-252-162-81.adsl.proxad.net) at Fri Jun 17 20:55:06 2005"
-                },
-                new Event()
-                {
-                    timestamp = "Jun 17 20:55:06",
-                    message = "combo ftpd[30754]: connection from 82.252.162.81 (lns-vlq-45-tou-82-252-162-81.adsl.proxad.net) at Fri Jun 17 20:55:06 2005"
-                },
-                new Event()
-                {
-                    timestamp = "Jun 17 20:55:06",
-                    message = "combo ftpd[30755]: connection from 82.252.162.81 (lns-vlq-45-tou-82-252-162-81.adsl.proxad.net) at Fri Jun 17 20:55:06 2005"
+                    message = "combo ftpd[30759]: connection from 82.252.162.81 (lns-vlq-45-tou-82-252-162-81.adsl.proxad.net) at Fri Jun 17 20:55:07 2005"
                 }
             };
             var eventReaderService = new EventReaderService(_configuration, _mockLogger.Object);
-            var actual = eventReaderService.ReadEventsWithKeywordFromFile("Connection", " ");
-            Assert.AreEqual(expected.Count, actual.Count());
+            var actual = eventReaderService.ReadEventsWithKeywordFromFile("./logs/Connection.log", " ");
             Assert.AreEqual(expected.First().message, actual.First().message);
         }
 
@@ -73,7 +62,7 @@ namespace LogCollector.UnitTests.Services
         public void EventReaderServiceReturnsFalseWhenTheFileDoesNotExist()
         {
             var eventReaderService = new EventReaderService(_configuration, _mockLogger.Object);
-            var actual = eventReaderService.FileExists("NonExistentFile");
+            var actual = eventReaderService.FileExists("./logs/NonExistentFile.log", out string path);
             Assert.IsFalse(actual);
         }
         
@@ -81,7 +70,7 @@ namespace LogCollector.UnitTests.Services
         public void EventReaderServiceReturnsTrueWhenTheFileExists()
         {
             var eventReaderService = new EventReaderService(_configuration, _mockLogger.Object);
-            var actual = eventReaderService.FileExists("Connection");
+            var actual = eventReaderService.FileExists("Connection", out string path);
             Assert.IsTrue(actual);
         }
     }

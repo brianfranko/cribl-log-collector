@@ -18,11 +18,9 @@ namespace LogCollector.Services
             _logger = logger;
         }
 
-        public IEnumerable<Event> ReadEventsWithKeywordFromFile(string filename, string keyword)
+        public IEnumerable<Event> ReadEventsWithKeywordFromFile(string path, string keyword)
         {
             var results = new List<Event>();
-            filename = filename + ".log";
-            var path = Path.Combine(_configuration.LogsLocation, filename);
             var events = File.ReadLines(path);
             foreach (var log in events.Reverse())
             {
@@ -34,10 +32,10 @@ namespace LogCollector.Services
             return results;
         }
 
-        public bool FileExists(string filename)
+        public bool FileExists(string filename, out string path)
         {
             filename = filename + ".log";
-            var path = Path.Combine(_configuration.LogsLocation, filename);
+            path = Path.Combine(_configuration.LogsLocation, filename);
             return File.Exists(path);
         }
     }

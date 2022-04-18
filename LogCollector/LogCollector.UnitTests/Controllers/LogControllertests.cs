@@ -38,7 +38,8 @@ namespace LogCollector.UnitTests.Controllers
         [Test]
         public async Task logControllerReturnsFileSuccessfully()
         {
-            _eventReaderService.Setup(e => e.FileExists(It.IsAny<string>())).Returns(true);
+            string path;
+            _eventReaderService.Setup(e => e.FileExists(It.IsAny<string>(), out path)).Returns(true);
             var results = new List<Event>()
             {
                 new Event
@@ -58,7 +59,8 @@ namespace LogCollector.UnitTests.Controllers
         [Test]
         public async Task logControllerReturnsTheCorrectNumberOfEventsWhenSpecified()
         {
-            _eventReaderService.Setup(e => e.FileExists(It.IsAny<string>())).Returns(true);
+            string path;
+            _eventReaderService.Setup(e => e.FileExists(It.IsAny<string>(), out path)).Returns(true);
             var results = new List<Event>()
             {
                 new Event
