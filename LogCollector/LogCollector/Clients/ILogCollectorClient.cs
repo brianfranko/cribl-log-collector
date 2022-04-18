@@ -6,6 +6,6 @@ namespace LogCollector.Clients
 {
     public interface ILogCollectorClient
     {
-        Task<IEnumerable<Event>> GetNumberOfLogsWithKeyword(string machine, string filename, int numberOfEvents = 250, string keyword = " ");
+        Task<MachineEvents> GetNumberOfLogsWithKeyword(string machine, string filename, int numberOfEvents = 250, string keyword = " ");
     }
 }

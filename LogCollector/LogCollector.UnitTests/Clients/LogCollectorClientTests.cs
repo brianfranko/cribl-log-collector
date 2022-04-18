@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
@@ -55,8 +54,9 @@ namespace LogCollectorTests.Clients
             };
             var client = new LogCollectorClient(_httpClient, _logger.Object);
             var actual = await client.GetNumberOfLogsWithKeyword("machine", "file");
-            Assert.AreEqual(expected.First().timestamp, actual.First().timestamp);
-            Assert.AreEqual(expected.First().message, actual.First().message);
+            Assert.AreEqual(expected.First().timestamp, actual.events.First().timestamp);
+            Assert.AreEqual(expected.First().message, actual.events.First().message);
+            Assert.AreEqual("machine", actual.machine);
         }
 
         [Test]
@@ -70,7 +70,8 @@ namespace LogCollectorTests.Clients
             var expected = new List<Event>();
             var client = new LogCollectorClient(_httpClient, _logger.Object);
             var actual = await client.GetNumberOfLogsWithKeyword("machine", "file");
-            Assert.AreEqual(expected.Count, actual.Count());
+            Assert.AreEqual(expected.Count, actual.events.Count());
+            Assert.AreEqual("machine", actual.machine);
         }
 
         [Test]
@@ -93,7 +94,8 @@ namespace LogCollectorTests.Clients
             var expected = new List<Event>();
             var client = new LogCollectorClient(_httpClient, _logger.Object);
             var actual = await client.GetNumberOfLogsWithKeyword("machine", "file");
-            Assert.AreEqual(expected.Count, actual.Count());
+            Assert.AreEqual(expected.Count, actual.events.Count());
+            Assert.AreEqual("machine", actual.machine);
         }
     }
 }

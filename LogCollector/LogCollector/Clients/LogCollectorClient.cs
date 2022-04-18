@@ -19,23 +19,37 @@ namespace LogCollector.Clients
             _logger = logger;
         }
 
-        public async Task<IEnumerable<Event>> GetNumberOfLogsWithKeyword(string machine, string filename, int numberOfEvents = 250, string keyword = " ")
+        public async Task<MachineEvents> GetNumberOfLogsWithKeyword(string machine, string filename, int numberOfEvents = 250, string keyword = " ")
         {
             try
             {
                 var uri = BuildUri(machine, filename);
+                // TODO: Add in rety and timeout handlers for HTTP call
                 var response = await _httpClient.GetAsync(uri);
                 response.EnsureSuccessStatusCode();
                 string responseBody = await response.Content.ReadAsStringAsync();
                 var events = JsonSerializer.Deserialize<List<Event>>(responseBody);
-                return events ?? new List<Event>();
+                return events == null
+                    ? new MachineEvents()
+                    {
+                        machine = machine,
+                        message = "Failed to get logs from machine."
+                    }
+                    : new MachineEvents()
+                    {
+                        machine = machine,
+                        events = events
+                    };
             }
             catch (HttpRequestException e)
             {
                 _logger.LogError(e.Message);
+                return new MachineEvents()
+                {
+                    machine = machine,
+                    message = e.Message
+                };
             }
-
-            return await Task.FromResult(new List<Event>());
         }
 
         private Uri BuildUri(string machine, string filename, int numberOfEvents = 250, string keyword = "")
